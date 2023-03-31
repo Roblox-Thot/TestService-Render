@@ -3,10 +3,19 @@ Python server to grab and decode the TS output
 
 # How to use
 * Put a RenderingTest inside of TestService
-* Use the properties Window to set the settings (auto script soon)
+* Use the properties Window to set the settings
 * Run the following command in the command bar
 ```lua
 game.TestService:Run()
+```
+
+# Scripts
+### Move the RenderingTest to your camera
+```lua
+local cam = workspace:FindFirstChildOfClass("Camera")
+local Rcam = game:GetService("TestService"):FindFirstChildOfClass("RenderingTest")
+
+Rcam.CFrame = cam.CFrame
 ```
 
 # It running
