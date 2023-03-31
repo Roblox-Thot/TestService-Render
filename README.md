@@ -3,10 +3,16 @@ Python server to grab and decode the output
 
 Will name the files based on what the render camera is called 
 
+# Requirements
+If you want to use the Python file you need to have flask, json, and base64 packages installed
+
+If you use the build in [releases] then you don't need anything other than Roblox Studio
+
 # How to use
-* Put a RenderingTest inside of TestService
-* Use the properties Window to set the settings
-* Run the following command in the command bar
+1. Run the Python file or a the [release] build
+2. Put a RenderingTest inside of TestService
+3. Use the properties Window to set the settings
+4. Run the following command in the command bar to render
 ```lua
 game.TestService:Run()
 ```
@@ -39,3 +45,7 @@ MaximumADHD's basic version writen in C#: https://gist.github.com/maximumadhd/15
 
 # It running
 [2023-03-31 14-36-39.webm](https://user-images.githubusercontent.com/67937010/229203772-48c09ccc-c7a2-46cb-9c92-249fe0218a05.webm)
+
+
+[release]: "https://github.com/Roblox-Thot/TestService-Render/releases/latest"
+[releases]: "https://github.com/Roblox-Thot/TestService-Render/releases"
