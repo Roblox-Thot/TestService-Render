@@ -23,5 +23,7 @@ The useless docs on the RenderingTest object: https://create.roblox.com/docs/ref
 
 Devforums asking for help: https://devforum.roblox.com/t/what-response-data-does-renderingtest-want/1555555
 
+MaximumADHD's basic version writen in C#: https://gist.github.com/maximumadhd/1594e716dcafe06f37cf9e1d8fcb2c3c
+
 # It running
 [2023-03-31 14-36-39.webm](https://user-images.githubusercontent.com/67937010/229203772-48c09ccc-c7a2-46cb-9c92-249fe0218a05.webm)
