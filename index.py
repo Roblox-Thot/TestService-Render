@@ -6,7 +6,7 @@ save_image = True # Exports the PNG to a file
 
 save_base64 = True # Saves the raw Base64 to a file
 
-dump_json = True # do you want the json to be dumped at the end?
+dump_json = False # do you want the json to be dumped at the end?
 
 ##########################
 #      Script below      #
