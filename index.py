@@ -1,8 +1,20 @@
 from flask import Flask, request
 import json, base64
 
+##########################
+#      Config below      #
+##########################
+
+saveImage = True # Exports the PNG to a file
+
+saveBase64 = True # Saves the raw Base64 to a file
+
 # Dumping JSON causes Studio to think it failed btw
 dumpJson = False # do you want the json to be dumped at the end?
+
+##########################
+#      Script below      #
+##########################
 
 app = Flask(__name__)
 
@@ -12,12 +24,14 @@ def receive():
         data = request.data
         data = json.loads(data)
         name = data['name']
-        print(name + " Base64.txt")
-        with open(name + " Base64.txt", "w") as f: # Puts the Base64 of the image in (ObjectName) Base64.txt
-            f.write("data:image/png;base64,"+data['image'])
 
-        with open(name + " Image.png", "wb") as f: # Outputs the image to (ObjectName) Image.png
-            f.write(base64.b64decode(data['image']))
+        if saveImage:
+            with open(name + " Image.png", "wb") as f: # Outputs the image to (ObjectName) Image.png
+                f.write(base64.b64decode(data['image']))
+
+        if saveBase64:
+            with open(name + " Base64.txt", "w") as f: # Puts the Base64 of the image in (ObjectName) Base64.txt
+                f.write("data:image/png;base64,"+data['image'])
 
         if dumpJson:
             with open(name + " data.json", "w")  as f:
