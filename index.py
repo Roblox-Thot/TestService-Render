@@ -31,11 +31,11 @@ def receive():
 
         if saveBase64:
             with open(name + " Base64.txt", "w") as f: # Puts the Base64 of the image in (ObjectName) Base64.txt
-                f.write("data:image/png;base64,"+data['image'])
+                f.write("data:image/png;base64," + data['image'])
 
         if dumpJson:
             with open(name + " data.json", "w")  as f:
-                f.write(json.dump(data,f,indent=4))
+                f.write(json.dump(data, f, indent=4))
 
         return "passed" # Tells Studio it passed
     except:
@@ -46,4 +46,4 @@ def bye(): # Only needed to prevent errors
     return ""
 
 if __name__ == '__main__':
-    app.run(port=8001,debug=True)
+    app.run(port=8001, debug=True)
