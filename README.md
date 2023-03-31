@@ -12,10 +12,20 @@ game.TestService:Run()
 # Scripts
 ### Move the RenderingTest to your camera
 ```lua
-local cam = workspace:FindFirstChildOfClass("Camera")
+local cam = workspace.CurrentCamera
 local Rcam = game:GetService("TestService"):FindFirstChildOfClass("RenderingTest")
 
 Rcam.CFrame = cam.CFrame
+Rcam.FieldOfView = cam.FieldOfView
+```
+
+### Create a new RenderingTest on top of current camera
+```lua
+local cam = workspace.CurrentCamera
+local Rcam = Instance.new("RenderingTest", game:GetService("TestService"))
+
+Rcam.CFrame = cam.CFrame
+Rcam.FieldOfView = cam.FieldOfView
 ```
 
 # Info
