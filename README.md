@@ -1,5 +1,7 @@
 # TestService-Render
-Python server to grab and decode the TS output
+Python server to grab and decode the output
+
+Will name the files based on what the render camera is called 
 
 # How to use
 * Put a RenderingTest inside of TestService
