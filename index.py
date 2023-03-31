@@ -1,7 +1,8 @@
 from flask import Flask, request
 import json, base64
 
-dumpJson = True # do you want the json to be dumped at the end?
+# Dumping JSON causes Studio to think it failed btw
+dumpJson = False # do you want the json to be dumped at the end?
 
 app = Flask(__name__)
 
