@@ -2,12 +2,11 @@
 #      Config below      #
 ##########################
 
-saveImage = True # Exports the PNG to a file
+save_image = True # Exports the PNG to a file
 
-saveBase64 = True # Saves the raw Base64 to a file
+save_base64 = True # Saves the raw Base64 to a file
 
-# Dumping JSON causes Studio to think it failed btw
-dumpJson = False # do you want the json to be dumped at the end?
+dump_json = True # do you want the json to be dumped at the end?
 
 ##########################
 #      Script below      #
@@ -25,17 +24,17 @@ def receive():
         data = json.loads(data)
         name = data['name']
 
-        if saveImage:
+        if save_image:
             with open(name + " Image.png", "wb") as f: # Outputs the image to (ObjectName) Image.png
                 f.write(base64.b64decode(data['image']))
 
-        if saveBase64:
+        if save_base64:
             with open(name + " Base64.txt", "w") as f: # Puts the Base64 of the image in (ObjectName) Base64.txt
                 f.write("data:image/png;base64," + data['image'])
 
-        if dumpJson:
+        if dump_json:
             with open(name + " data.json", "w")  as f:
-                f.write(json.dump(data, f, indent=4))
+                json.dump(data, f, indent=4)
 
         return "passed" # Tells Studio it passed
     except:
