@@ -14,7 +14,7 @@ If you use the build in [releases] then you don't need anything other than Roblo
 3. Use the properties Window to set the settings
 4. Run the following command in the command bar to render
 ```lua
-game.TestService:Run()
+game:GetService("TestService"):Run()
 ```
 
 # Scripts
