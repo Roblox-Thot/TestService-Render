@@ -25,15 +25,15 @@ def receive():
         name = data['name']
 
         if save_image:
-            with open(name + " Image.png", "wb") as f: # Outputs the image to (ObjectName) Image.png
+            with open(f"{name} Image.png", "wb") as f: # Outputs the image to (ObjectName) Image.png
                 f.write(base64.b64decode(data['image']))
 
         if save_base64:
-            with open(name + " Base64.txt", "w") as f: # Puts the Base64 of the image in (ObjectName) Base64.txt
+            with open(f"{name} Base64.txt", "w") as f: # Puts the Base64 of the image in (ObjectName) Base64.txt
                 f.write("data:image/png;base64," + data['image'])
 
         if dump_json:
-            with open(name + " data.json", "w")  as f:
+            with open(f"{name} data.json", "w") as f:
                 json.dump(data, f, indent=4)
 
         return "passed" # Tells Studio it passed
