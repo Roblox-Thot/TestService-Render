@@ -37,7 +37,8 @@ def receive():
                 json.dump(data, f, indent=4)
 
         return 'passed' # Tells Studio it passed
-    except:
+    except Exception as e: 
+        print(e)
         return 'failed' # Used to tell Studio if it failed (tell me in a issue)
 
 @app.route('/api/v1/alltestfinised', methods = ['POST'])
