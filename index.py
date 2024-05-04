@@ -2,11 +2,11 @@
 #      Config below      #
 ##########################
 
-save_image = True # Exports the PNG to a file
+save_image:bool = True # Exports the PNG to a file
 
-save_base64 = True # Saves the raw Base64 to a file
+save_base64:bool = True # Saves the raw Base64 to a file
 
-dump_json = False # do you want the json to be dumped at the end?
+dump_json:bool = False # do you want the json to be dumped at the end?
 
 ##########################
 #      Script below      #
@@ -15,14 +15,14 @@ dump_json = False # do you want the json to be dumped at the end?
 from flask import Flask, request
 import json, base64
 
-app = Flask(__name__)
+app:Flask = Flask(__name__)
 
 @app.route('/api/v1/submit_test', methods = ['POST'])
 def receive():
     try:
         data = request.data
-        data = json.loads(data)
-        name = data['name']
+        data:dict = json.loads(data)
+        name:str = data['name']
 
         if save_image:
             with open(f'{name} Image.png', 'wb') as f: # Outputs the image to (ObjectName) Image.png
